@@ -1,6 +1,3 @@
-import { NotionClient } from "./notion";
-import { SlackClient } from "./slack";
-
 export abstract class ApplicationClient {
     protected _token: string;
     protected _client: unknown;
@@ -13,6 +10,5 @@ export abstract class ApplicationClient {
     protected initialize_client(): unknown {
         return undefined;
     }
-
 }
 

@@ -14,5 +14,4 @@ export const clipMessage = async (req: express.Request, appClient: AppClient) =>
       token: slackClient.token,
       view: modal(payload)       
   })
-  console.log(modalResult);
 };

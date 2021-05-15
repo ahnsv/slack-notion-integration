@@ -9,6 +9,7 @@ export class NotionClient extends ApplicationClient {
       throw new IntegrationEnvironmentError("NOTION_TOKEN을 찾을 수 없습니다");
     }
     super(notionToken);
+    this._client = this.initialize_client()
   }
 
   public initialize_client(): Client | undefined {
@@ -21,5 +22,9 @@ export class NotionClient extends ApplicationClient {
             throw new ClientInitializationError("Notion Client를 만드는데 실패했습니다")
         }
     }
+  }
+
+  public client(): Client | undefined {
+    return this._client as Client;
   }
 }
