@@ -9,9 +9,20 @@ export class SlackClient extends ApplicationClient {
       throw new IntegrationEnvironmentError("SLACK_TOKEN을 찾을 수 없습니다");
     }
     super(slackToken);
+    this._client = this.initialize_client()
   }
 
   public initialize_client(): WebClient | undefined {
+    console.log(this._token);
+    
     return new WebClient(this._token);
+  }
+
+  public get token() {
+    return this._token
+  }
+
+  public get client() {
+    return this._client as WebClient
   }
 }
