@@ -1,4 +1,4 @@
-export abstract class Controller {
+export abstract class ApplicationClient {
     protected _token: string;
 
     constructor(token: string) {

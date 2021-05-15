@@ -1,8 +1,8 @@
 import { Client, APIErrorCode } from "@notionhq/client";
-import { Controller } from ".";
+import { ApplicationClient } from ".";
 import { ClientInitializationError, IntegrationEnvironmentError } from "../common/exceptions";
 
-export class NotionController extends Controller {
+export class NotionClient extends ApplicationClient {
   public constructor() {
     const notionToken = process.env.NOTION_TOKEN;
     if (!notionToken) {

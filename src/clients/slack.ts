@@ -1,8 +1,8 @@
-import { Controller } from ".";
+import { ApplicationClient } from ".";
 import { WebClient } from "@slack/web-api";
 import { IntegrationEnvironmentError } from "../common/exceptions";
 
-export class SlackController extends Controller {
+export class SlackClient extends ApplicationClient {
   public constructor() {
     const slackToken = process.env.SLACK_TOKEN;
     if (!slackToken) {
